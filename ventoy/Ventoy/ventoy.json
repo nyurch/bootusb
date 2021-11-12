@@ -2,7 +2,7 @@
     "control": [
         { "VTOY_DEFAULT_MENU_MODE": "1" },
         { "VTOY_FILT_DOT_UNDERSCORE_FILE": "1" },
-		{ "VTOY_TREE_VIEW_MENU_STYLE": "1" }
+        { "VTOY_TREE_VIEW_MENU_STYLE": "1" }
     ],
     
     "theme": {
@@ -13,15 +13,30 @@
         "ventoy_color": "#0000ff"
     },
     
-    
-    "menu_class": [        
+    "menu_class": [
         {
-            "key": "ubuntu",
-            "class": "ubuntu"
+            "key": "acronis",
+            "class": "acronis"
         },        
         {
             "key": "linuxmint",
             "class": "linuxmint"
+        },
+        {
+            "key": "o_o",
+            "class": "o_o"
+        },        
+        {
+            "key": "ubuntu",
+            "class": "ubuntu"
+        },
+        {
+            "key": "windows",
+            "class": "windows"
+        },
+        {
+            "key": "memtest86",
+            "class": "memtest86"
         },
         {
             "dir": "/Acronis Utilities",
@@ -46,22 +61,6 @@
         {
             "dir": "/Untested Tools",
             "class": "folder"
-        },
-        {
-            "key": "windows",
-            "class": "windows"
-        },
-        {
-            "key": "acronis",
-            "class": "acronis"
-        },
-        {
-            "key": "o_o",
-            "class": "o_o"
-        },
-        {
-            "key": "memtest86",
-            "class": "memtest86"
         }
     ],
     
@@ -76,16 +75,20 @@
         },
         {
             "image": "/Hardware Testers/memtest86-usb.img",
-            "alias": "Memtest86 9.0"
+            "alias": "Memtest86 9.3"
         },
         {
             "image": "/Install Linux/linuxmint-20.2-xfce-64bit.iso",
             "alias": "Linux Mint 20.2 XFCE"
         },
         {
-            "image": "/Install Windows/",
-            "alias": "Windows 10 LTSC 2021 x64"
+            "image": "/Install Windows/windows10.iso",
+            "alias": "Windows 10 21h2 x64"
         },
+        {
+            "image": "/Install Windows/windows10ltsc.iso",
+            "alias": "Windows 10 LTSC 21h2 x64"
+        }
         {
             "image": "/Live OS/windows_DaRT10_x64.iso",
             "alias": "DaRT Windows 10 x64"
@@ -100,21 +103,58 @@
         }
     ],
     
+    "menu_tip": {
+      "left": "10%",
+      "top": "81%",
+      "color": "white",
+      "tips": [
+          {
+              "image": "/Acronis Utilities/acronis-cyber_backup_v12.5.iso",
+              "tip": "Acronis Cyber Backup v12.5"
+          },
+          {
+              "image": "/Acronis Utilities/acronis-ti_dd_ur.iso",
+              "tip": "True Image 2020, Disk Director 12, Universal Restore 11.7"
+          },
+          {
+              "image": "/Hardware Testers/memtest86-usb.img",
+              "tip": "PassMark Memtest86 9.3"
+          },
+          {
+              "image": "/Install Linux/linuxmint-20.2-xfce-64bit.iso",
+              "tip": "Linux Mint 20.2 XFCE"
+          },
+          {
+              "image": "/Install Windows/windows10.iso",
+              "tip": "Windows 10 21h2 x64 Original ISO"
+          },
+          {
+              "image": "/Install Windows/windows10ltsc.iso",
+              "tip": "Windows 10 LTSC 21h2 x64 Original ISO"
+          },
+          {
+              "image": "/Live OS/windows_DaRT10_x64.iso",
+              "tip": "Official Microsoft Recovery ISO"
+          },
+          {
+              "image": "/ALive OS/windows_Win10XPE_x64.ISO",
+              "tip": "M.Yurchuk Windows 10 x64 Live Disk"
+          },
+          {
+              "image": "/Live OS/o_o_BlueCon_v18.0.8088.wim",
+              "tip": "O&O Software Windows 10 x64 Live Disk"
+          },          
+      ]
+    },
+    
     "auto_install": [
         {
-            "image": "/ISO/cn_windows_10.iso",
+            "image": "/Install Windows/windows_10.iso",
             "template": "/ventoy/script/windows_unattended.cfg"
         },
         {
-            "image": "/ISO/cn_windows_server_2012_r2_vl_x64_dvd_2979220.iso",
-            "template": [
-                "/ventoy/script/windows_unattended1.xml",
-                "/ventoy/script/windows_unattended2.xml",
-                "/ventoy/script/windows_unattended3.xml",
-                "/ventoy/script/windows_unattended4.xml",
-                "/ventoy/script/windows_unattended5.xml",
-                "/ventoy/script/windows_unattended6.xml"
-            ]
+            "image": "/Install Windows/windows_10ltsc.iso",
+            "template": "/ventoy/script/windows_unattended1.xml"
         }
     ],
 	
