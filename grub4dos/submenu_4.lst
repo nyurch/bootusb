@@ -1,0 +1,24 @@
+timeout 30
+gfxmenu /gfx/HDD
+default 0
+
+title Backup & Recovery 11.5.37687 x86
+kernel /iso/abr/abrx86/abrx86.krn quiet vga=788
+initrd /iso/abr/abrx86/abrx86.fs
+
+title Backup & Recovery 11.5.37687 x64
+kernel /iso/abr/abrx64/abrx64.krn quiet vga=788
+initrd /iso/abr/abrx64/abrx64.fs
+
+title Disk Director 12.0.3223
+kernel /iso/add/addx86/add12x86.krn quiet vga=788
+initrd /iso/add/addx86/add12x86.fs
+
+title True Image 2015 18.0.5539
+kernel /iso/ati/ati2015.krn quiet vga=788
+initrd /iso/ati/ati2015.fs
+
+title Return to main menu
+lock
+find --set-root /menu.lst
+configfile /menu.lst

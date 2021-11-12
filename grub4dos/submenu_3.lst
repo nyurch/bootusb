@@ -1,0 +1,56 @@
+timeout 30
+gfxmenu /gfx/OS
+default 0
+
+title Start Slax 9.11
+set root=(hd0,0)
+kernel /slax/boot/vmlinuz ramdisk_size=6666 root=/dev/ram0 rw autoexec=xconf;telinit~4 changes=/slax/ fromusb
+initrd /slax/boot/initrfs.img
+boot
+
+title Linux Mint XFCE 19.2
+fallback 6
+find --set-root /iso/linuxmint-19.2-xfce-64bit.iso
+map --heads=0 --sectors-per-track=0 /iso/linuxmint-19.2-xfce-64bit.iso (0xff)
+map --hook
+root (0xff)
+kernel /casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper iso-scan/filename=/iso/linuxmint-19.2-xfce-64bit.iso splash
+initrd /casper/initrd.lz
+
+title Linux Mint XFCE 19.2
+fallback 6
+find --set-root /iso/ubt1804.iso
+map --mem /iso/ubt1804.iso (0xff) || map --heads=0 --sectors-per-track=0 /iso/ubt1804.iso (0xff)
+map --hook
+root (0xff)
+kernel /casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper iso-scan/filename=/iso/ubt1804.iso splash
+initrd /casper/initrd.lz
+
+title Start Install Windows XP
+map --mem (md)0x800+4 (99)
+map --mem /iso/FiraDisk.img (fd0)
+map --mem /iso/FiraDisk.img (fd1)
+map /iso/WinXp.iso (0xff)
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+write (99) [FiraDisk]\nStartOptions=cdrom,vmem=find:/iso/WinXP.iso;\n\0
+chainloader (0xff)/I386/SETUPLDR.BIN
+
+title Continue Install Windows XP
+map --mem (md)0x800+4 (99)
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+write (99) [FiraDisk]\nStartOptions=cdrom,vmem=find:/iso/WinXP.iso;\n\0
+chainloader (hd0)+1
+
+title Install Win10 LTSB x64 EN
+root (hd0,0)
+chainloader /bootmgr
+boot
+
+title Return to main menu
+lock
+find --set-root /menu.lst
+configfile /menu.lst

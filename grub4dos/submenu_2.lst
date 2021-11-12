@@ -1,0 +1,32 @@
+timeout 30
+gfxmenu /gfx/Hardware
+default 0
+
+title Run OLD Memtest86+ 5.01
+map /iso/memtest86.iso (hd32)
+map --hook
+chainloader (hd32)
+boot
+
+title Run NEW Memtest86 4.3.7
+map /iso/Memtest86-4.3.7.iso (hd32)
+map --hook
+chainloader (hd32)
+boot
+
+title Run NEW Memtest86 8.3 UEFI
+map /iso/memtest86-usb.img (hd32)
+map --hook
+chainloader (hd32)
+boot
+
+title Run Victoria 3.5
+map /iso/vcr35r.iso (hd32)
+map --hook
+chainloader (hd32)
+boot
+
+title Return to main menu
+lock
+find --set-root /menu.lst
+configfile /menu.lst

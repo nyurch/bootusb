@@ -1,0 +1,65 @@
+timeout 30
+gfxmenu /gfx/LIVE
+default 0
+
+title Run MSDaRT 5.0 WinXP SP3 x86
+find --set-root /iso/msdart_5.0_x86.iso
+map --mem /iso/FiraDisk.img (fd0)
+# map --mem /iso/firadisk.gz (fd0)
+map --mem /iso/msdart_5.0_x86.iso (hd32)
+map --hook
+chainloader (hd32)
+
+title Run MSDaRT 7.0 Win7 x86
+find --set-root /iso/msdart_7.0_x86.iso
+map /iso/msdart_7.0_x86.iso (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+title Run MSDaRT 7.0 Win7 x64
+find --set-root /iso/msdart_7.0_x64.iso
+map /iso/msdart_7.0_x64.iso (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+title Run MSDaRT Win10 x86
+find --set-root /iso/DaRT10_x86.iso
+map /iso/DaRT10_x86.iso (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+title Run MSDaRT Win10 x64
+find --set-root /iso/DaRT10_x64.iso
+map /iso/DaRT10_x64.iso (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+title Run Acronis Full 2020
+find --set-root /iso/acronis_mod31.iso
+map /iso/acronis_mod31.iso (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+title Run Win10 PESE
+find --set-root /iso/Win10XPE_x64.ISO
+map /iso/Win10XPE_x64.ISO (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+title Run WinPE(TrueImage + TC)
+find --set-root /iso/Acronis10PE_26.11.2018.iso
+map /iso/Acronis10PE_26.11.2018.iso (hd32)
+map --hook
+root (hd32)
+chainloader (hd32)
+
+title Return to main menu
+lock
+find --set-root /menu.lst
+configfile /menu.lst
