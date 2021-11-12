@@ -7,10 +7,11 @@
     
     "theme": {
         "file": "/ventoy/theme/theme.txt",        
+        "gfxmode": "1366x768",    
         "display_mode": "GUI",
         "ventoy_left": "5%",
         "ventoy_top": "95%",
-        "ventoy_color": "#0000ff"
+        "ventoy_color": "#ffffff"
     },
     
     "menu_class": [
@@ -88,7 +89,7 @@
         {
             "image": "/Install Windows/windows10ltsc.iso",
             "alias": "Windows 10 LTSC 21h2 x64"
-        }
+        },
         {
             "image": "/Live OS/windows_DaRT10_x64.iso",
             "alias": "DaRT Windows 10 x64"
@@ -102,50 +103,6 @@
             "alias": "O&O BlueCon v18.0"
         }
     ],
-    
-    "menu_tip": {
-      "left": "10%",
-      "top": "81%",
-      "color": "white",
-      "tips": [
-          {
-              "image": "/Acronis Utilities/acronis-cyber_backup_v12.5.iso",
-              "tip": "Acronis Cyber Backup v12.5"
-          },
-          {
-              "image": "/Acronis Utilities/acronis-ti_dd_ur.iso",
-              "tip": "True Image 2020, Disk Director 12, Universal Restore 11.7"
-          },
-          {
-              "image": "/Hardware Testers/memtest86-usb.img",
-              "tip": "PassMark Memtest86 9.3"
-          },
-          {
-              "image": "/Install Linux/linuxmint-20.2-xfce-64bit.iso",
-              "tip": "Linux Mint 20.2 XFCE"
-          },
-          {
-              "image": "/Install Windows/windows10.iso",
-              "tip": "Windows 10 21h2 x64 Original ISO"
-          },
-          {
-              "image": "/Install Windows/windows10ltsc.iso",
-              "tip": "Windows 10 LTSC 21h2 x64 Original ISO"
-          },
-          {
-              "image": "/Live OS/windows_DaRT10_x64.iso",
-              "tip": "Official Microsoft Recovery ISO"
-          },
-          {
-              "image": "/ALive OS/windows_Win10XPE_x64.ISO",
-              "tip": "M.Yurchuk Windows 10 x64 Live Disk"
-          },
-          {
-              "image": "/Live OS/o_o_BlueCon_v18.0.8088.wim",
-              "tip": "O&O Software Windows 10 x64 Live Disk"
-          },          
-      ]
-    },
     
     "auto_install": [
         {
