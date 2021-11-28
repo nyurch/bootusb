@@ -72,7 +72,7 @@
         },
         {
             "image": "/Acronis Utilities/acronis-ti_dd_ur.iso",
-            "alias": "Acronis TI 2020/DD 12/UR 11.7"
+            "alias": "Acronis TI 2020/DD 12.5/UR 11.7"
         },
         {
             "image": "/Hardware Testers/memtest86-usb.img",
@@ -83,11 +83,11 @@
             "alias": "Linux Mint 20.2 XFCE"
         },
         {
-            "image": "/Install Windows/windows10.iso",
+            "image": "/Install Windows/windows-10.iso",
             "alias": "Windows 10 21h2 x64"
         },
         {
-            "image": "/Install Windows/windows10ltsc.iso",
+            "image": "/Install Windows/windows-10ltsc.iso",
             "alias": "Windows 10 LTSC 21h2 x64"
         },
         {
@@ -106,17 +106,21 @@
     
     "auto_install": [
         {
-            "image": "/Install Windows/windows_10.iso",
-            "template": "/ventoy/script/windows_unattended.cfg"
+            "image": "/Install Windows/windows-10.iso",
+            "template": [
+			"/ventoy/script/autounattend-dragon.xml",
+			"/ventoy/script/autounattend-home.xml"],
+            "autosel": 0,
+            "timeout": 10
         },
         {
-            "image": "/Install Windows/windows_10ltsc.iso",
-            "template": "/ventoy/script/windows_unattended1.xml"
+            "image": "/Install Windows/windows-10ltsc.iso",
+            "template": "/ventoy/script/autounattend_ltsb.xml"
         }
     ],
 	
     "auto_memdisk": [
-        "/Hardware Testers/Memtest86-4.3.7.iso",
+        "/Hardware Testers/memtest86-usb.img",
         "/ISO/ESXi.iso",
         "/ISO/Win10PE.iso"
     ]
